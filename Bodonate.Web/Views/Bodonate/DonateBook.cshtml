@@ -1,0 +1,83 @@
+﻿@model Bodonate.Web.Views.ViewModels.BookListModel
+
+@{    ViewBag.Title = "DonateBook";
+    Layout = null;
+}
+<head>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link href="~/Content/RegisterStyle.css" rel="stylesheet" type="text/css" />
+    <title> Donate Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Client Signup Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="//fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700" rel="stylesheet">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+
+
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/Navigation.css">
+
+</head>
+
+<div style="display:inline-block; margin-top:0px; height:120%; width:100%;">
+
+
+
+
+    <div id="navigation" class="naviga">
+        <p class="bodo">Bodonate Anasayfa </p>
+        <p class="carbon">&#64;CarbonSoft</p>
+        <div class="nav1">
+            <div class="home">@Html.ActionLink("Anasayfa", "Index", "Bodonate", User, new { @class = "home" })</div>
+            <div class="home">@Html.ActionLink("Kayıt", "UserRegister", "Bodonate", new { }, new { @class = "home" })</div>
+            <div class="home">@Html.ActionLink("İletişim", "Contact", "Bodonate", new { }, new { @class = "home" })</div>
+        </div>
+    </div>
+
+
+    @using (Html.BeginForm("DonateBook", "Bodonate", FormMethod.Post,Model))
+    {
+
+        <div class="main main-agileits" style="height:90%; width:30%; margin-top:100px; margin-left: 35%;">
+
+            <div class="main-agilerow" style="height:75%; width:100%; ">
+                <div class="signup-wthreetop">
+                    <h2>Kitap Bağışı</h2>
+                    <p><i><b><font size="1">Hemen kayıt ol ve kitaplarını paylaş!</font></b></i></p>
+                </div>
+                <div class="contact-wthree" style="height:75%;" >
+                        <div class="form-w3step1" style="height:90%;">
+                            @for (int i = 0; i < Model.genres.Count; i++)
+                            {
+
+
+                            <div class="edit-form">
+
+                                @Html.CheckBoxFor(k => Model.genres[i].Checked,new {   @name = "test" })
+                                @Html.DisplayFor(k => k.genres[i].Name)
+                                @Html.HiddenFor(k => k.genres[i].Name)
+                                @Html.HiddenFor(k => k.genres[i].Checked)
+
+                            </div>
+
+                            }
+
+
+
+                            @Html.TextBoxFor(k => k.Message, new { @class = "agileits-btm edit-form " })
+                        </div>
+
+                        <input type="submit" value="Bağışla">
+                </div>
+            </div>
+        </div>
+
+
+    }
+ 
+</div>

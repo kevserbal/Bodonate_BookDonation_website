@@ -1,0 +1,101 @@
+﻿@model  Bodonate.Web.Views.ViewModels.UserModel
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<link href="~/Content/RegisterStyle.css" rel="stylesheet" type="text/css" />
+<title>UserRegister</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Client Signup Form template Responsive, Login form web template,Flat Pricing tables,Flat Drop downs  Sign up Web Templates, Flat Web Templates, Login sign up Responsive web template, SmartPhone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- Custom Theme files -->
+<!-- //Custom Theme files -->
+<!-- web font -->
+<link href="//fonts.googleapis.com/css?family=Old+Standard+TT:400,400i,700" rel="stylesheet">
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'><!--web font-->
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="~/Scripts/bootstrap.min.js"></script>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<link href="~/Content/Navigation.css" rel="stylesheet" id="bootstrap-css">
+
+<div style="display:inline-block; margin-top:0px; height:120%; width:100%;">
+
+
+        <div id="navigation" class="naviga">
+            <p class="bodo">Bodonate Anasayfa </p>
+            <p class="carbon" >&#64;CarbonSoft</p>
+            <div class="nav1">
+                <div class="home">@Html.ActionLink("Anasayfa", "Index", "Bodonate", User, new { @class = "home" })</div>
+                <div class="home">@Html.ActionLink("Kayıt", "UserRegister", "Bodonate", new { }, new { @class = "home" })</div>
+                <div class="home">@Html.ActionLink("İletişim", "Contact", "Bodonate", new { }, new { @class = "home" })</div>
+            </div>
+        </div>
+        <div style="width:100%; height:70%;  float: left;  margin-top:10%;  ">
+
+
+            <div style="display:block; float: left;  width:70%; height:90%;">
+
+
+
+                <div style="display :inline-block; ">
+
+
+                    <div style="display :inline-block;  ">
+                        <img src="https://c1.staticflickr.com/9/8078/8314929977_28fd740070_b.jpg" style=" width:80%; height:138.8%; display:inline-block; margin-left:0%; margin-right:0%; margin-top:-4%;" />
+                     
+                    </div>
+
+                </div>
+            </div>
+
+            <div style="display:inline-block; float: left;  width:25%; height:80%; margin-left:2%;">
+                <div style="display:block;">
+                    <div style="width:3%; height:7%; float: left; display:inline-block; margin-top:5%; margin-left:35%;">1</div>
+                    <img style="width:10%; height:7%; display:inline-block; margin-top:5%; margin-left:1%;" src="~/Scripts/img/email.png" />
+                    <img id="Login" style="width:10%; height:7%; display:inline-block; margin-top:3%; margin-left:1%;" src="~/Scripts/img/user.png" />
+                    @if (Session["Username"] == null)
+                    {@Html.ActionLink("Giriş", "UserLogin", "Bodonate", new { @class = "login" }, new {  })}
+                    else
+                    {
+                    @Html.ActionLink(Session["Username"].ToString(), "Index", "Bodonate", new { }, new { @class = "login" })
+                    
+
+                     }
+
+
+
+
+                    <div style="display:block;">
+
+
+                        @Html.ActionLink("Bağış İsteği", "DonateBook", "Bodonate", null, new { @class = "ViewDemands" })
+                        @Html.ActionLink("İstek Görüntüle", "ViewRequests", "Bodonate", null, new { @class = "ViewDemands" })
+                        <div style="display :inline-block; margin-top:12%; ">
+                            <img width="220" height="220" src="~/Scripts/img/kids.png" style=" margin-left:17%; margin-top:0%;  display:inline-block;" />
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="display:block;   margin-top:0px; ">
+            <p style="display:inline-block; margin-top:0px;">&copy; 2018 Bodonate</p>
+            <img src="~/Scripts/img/logo.png" style=" width:10%; height:17%;  position:absolute; top:620px; left:1225px; right:0px; bottom:50px; margin:auto;" />
+
+
+        </div>
+    
+
+
+    <div  class="test">
+
+
+
+    </div>
+
+</div>
+
